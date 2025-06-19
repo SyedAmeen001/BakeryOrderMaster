@@ -1,0 +1,104 @@
+We are developing a robust, full-stack Order Management System (OMS) tailored for a bakery business, with support for online orders, Point of Sale (POS) functionality, and a secure admin dashboard — all running locally for development or in-store deployment.
+
+The application should use React for the frontend, Node.js/Express for the backend, and Socket.IO for real-time communication. A role-based authentication system should be implemented to control user access and functionality.
+
+---
+
+ Key Features Overview
+
+ 1. Authentication & User Roles
+
+* Login/Logout functionality with secure password hashing (e.g., bcrypt)
+* Token-based session handling (e.g., JWT)
+* Role-based access control (RBAC) with at least three roles:
+
+  * Admin: Full access to all settings and user management
+  * Staff: Access to POS and order handling
+  * Viewer: Read-only access to orders and reports
+* Permissions enforced on both frontend UI and backend API routes
+
+ 2. Online Customer Order Module
+
+* Customers can place orders online (via sample UI or REST endpoint)
+* Orders should appear in real-time in the admin/staff dashboard
+* Socket.IO used for real-time updates between client and server
+
+ 3. Point of Sale (POS) Interface
+
+* Dedicated POS screen for staff with product quick-pick, quantity, and checkout
+* Bill generation and receipt view
+* Option to mark orders as "Paid" or "Pending"
+
+ 4. Settings & Configuration Panel
+
+* Manage:
+
+  * Product catalog (add/edit/remove items, prices, categories)
+  * Services (e.g., online orders, delivery, discounts, taxes)
+  * Store hours
+  * UI preferences (e.g., Dark Mode toggle)
+  * User management (Admins only)
+
+ 5. Dashboard & Reports
+
+* Overview of today's orders, sales, and stock status
+* Sales analytics with filter (e.g., by date, product)
+* Export data (CSV/PDF optional)
+
+ 6. Sample Data & Local Development Support
+
+* App should come with seed data for:
+
+  * Products
+  * Customers
+  * Sample orders
+  * Sample users for each role
+* Everything runs on `localhost`
+* Minimal setup (`npm install && npm start`)
+
+---
+
+ Tech Stack & Architecture
+
+ Backend – Node.js + Express
+
+* REST APIs and Socket.IO events
+* JWT-based authentication
+* Role-based route guards
+* In-memory data for dev or lightweight DB (LowDB, SQLite, or MongoDB)
+* Modular architecture (routes, controllers, middleware, models)
+
+ Frontend – React
+
+* Routing via `react-router-dom`
+* State via Context API or Redux
+* Protected routes and conditional UI rendering based on roles
+* Dark mode and mobile-responsive layout
+* Componentized pages:
+
+  * `LoginPage`
+  * `Dashboard`
+  * `POSPanel`
+  * `OrderBoard`
+  * `SettingsPanel`
+  * `UserManagement`
+
+ WebSockets – Real-time Communication
+
+* Real-time order push and status updates using Socket.IO
+* Bi-directional sync between POS, dashboard, and order view
+
+ Security Best Practices (Local Dev Ready)
+
+* Passwords hashed using bcrypt
+* JWT tokens signed with secret key
+* Role middleware to protect sensitive endpoints
+* CORS configured for development
+
+ Extras to Consider
+
+* Offline Mode Support (for POS using local storage/cache)
+* Print Receipts via browser print or Bluetooth printer
+* Barcode Scanner Integration (optional)
+* Unit Tests for backend routes and frontend logic
+* Dockerized setup for future deployment

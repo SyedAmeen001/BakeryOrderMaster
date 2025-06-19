@@ -1,0 +1,49 @@
+ Dashboard Tab
+
+* Quick Actions UI: The current UI for the *Quick Actions* section could be improved. Please consider redesigning it using a more intuitive and visually engaging layout.
+
+---
+
+ Orders Tab
+
+* Order Filters: The filter tabs (All, Placed, Processing, Completed) correctly display the item counts in brackets, but the actual filtering functionality is not working as expected. Selecting a tab should filter the visible orders accordingly.
+* Order Card – Print: For the *Print* functionality, we should integrate QZ Tray to handle printing directly from the browser to local printers. For that we should use the print template pass the data of the order card click into that template and print
+* Order Card – View Button:
+
+  * Clicking the *View* button currently shows minimal information. It should instead display the item names along with their respective quantities in a readable format.
+  * Clarify the purpose of the three-dot (⋮) menu on each order card. If unused, consider removing it or adding meaningful actions (e.g., edit, duplicate order, delete).
+
+---
+
+ Point of Sale (POS) Tab
+
+* Overall functionality is good.
+* Payment Section: The After *Payment* by cash or card there is no response. We should display a summary of the transaction after the order is paided.
+
+---
+
+ Customers Tab
+
+* View Orders Button: The *View Orders* button for each customer is not functioning.
+
+  * Expected behavior: Clicking this should either filter the orders in the *Orders* tab to show only that customer’s history, or open a detailed view with their order timeline.
+
+---
+
+ Analytics Tab
+
+* This section looks great overall.
+* Daily Revenue graph is not displaying any data
+* If any key analytics (e.g., sales by category, order trends over time) are missing, feel free to enhance the visuals or metrics as necessary.
+
+---
+
+ Settings Tab
+
+* The existing settings are functional.
+* Printer Configuration: Add a section for printer connectivity, especially since QZ Tray is being used in the Orders tab. This should include:
+
+  * Printer selection from available devices
+  * Test print functionality
+  * Connection status indicator (e.g., “Connected to QZ Tray”)
+  
